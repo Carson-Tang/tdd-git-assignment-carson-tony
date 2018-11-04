@@ -15,3 +15,10 @@ def mode(list_data):
     mode.sort()
     return mode
 
+def variance(list_data):
+    if len(list_data) == 0 : return None
+    mean = sum(list_data) / len(list_data)
+    total = 0
+    for num in list_data:
+        total += abs(mean-num) * abs(mean-num)
+    return round(total / len(list_data),3)
