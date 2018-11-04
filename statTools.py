@@ -14,3 +14,4 @@ def mode(list_data):
     if len(mode) == 1 : return mode[0]
     mode.sort()
     return mode
+
