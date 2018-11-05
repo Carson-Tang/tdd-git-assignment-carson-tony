@@ -12,6 +12,13 @@ def test_mean_2():
 def test_mean_3():
     pass
 
+def test_median_1():
+    pass
+def test_median_2():
+    pass
+def test_median_3():
+    pass
+
 # Value frequencies - value:frequency
 def test_mode_1():
     assert(mode(empty_data) == None)
