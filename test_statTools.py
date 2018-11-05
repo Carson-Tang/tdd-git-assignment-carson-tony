@@ -20,12 +20,15 @@ def test_median_3():
     pass
 
 # Value frequencies - value:frequency
+# empty list, ans = None
 def test_mode_1():
     assert(mode(empty_data) == None)
 # 0:1, 1:1, 2:1, 4:2, 5:1, 6:1, 7:1, 8:1, 9:1, 20:1
+# 4 is most frequent
 def test_mode_2():
     assert(mode(list_data) == 4)
 # 1:1, 2:2, 3:1, 4:2, 5:1, 6:1, 7:1, 8:1, 9:1, 18:1, 20:1
+# 2 and 4 are most frequent
 def test_mode_3():
     assert(mode(list_data2) == [2, 4])
 
@@ -36,12 +39,19 @@ def test_range_2():
 def test_range_3():
     pass
 
+# sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
+# split = [0, 1, 2, 4, 4] [6, 7, 8, 9, 20]
+# split lower half = [0, 1] 2 [4, 4] , ans = 2
 def test_lowerquartile_1():
-    pass
+    assert(lower_quartile(list_data) == 2)
+# sorted list = [1, 2, 2, 3, 4, 4, 6, 7, 8, 9, 18, 20]
+# split = [1, 2, 2, 3, 4, 4] [6, 7, 8, 9, 18, 20]
+# split lower half = [1, 2] 2, 3 [4, 4], ans = (2+3)/2 = 2.5
 def test_lowerquartile_2():
-    pass
+    assert(lower_quartile(list_data2) == 2.5)
+# Empty list, ans = 0
 def test_lowerquartile_3():
-    pass
+    assert(lower_quartile(empty_data) == None)
 
 def test_upperquartile_1():
     pass
@@ -56,6 +66,9 @@ def test_variance_1():
 # sum = 84, elements = 12, mean = 7, ans = 416/12 = 104/3
 def test_variance_2():
     assert(variance(list_data2) == round(104/3,3))
+# sum = 0, elements = 0, ans = None
+def test_variance_3():
+    assert(variance(empty_data) == None)
 
 def test_standard_deviation_1():
     pass

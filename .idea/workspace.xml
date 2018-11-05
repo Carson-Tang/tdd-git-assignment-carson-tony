@@ -109,14 +109,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_statTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state relative-caret-position="265">
+          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1541430774166" expanded="true" signature="330:331" ph="..." />
-            <marker date="1541430774166" expanded="true" signature="733:734" ph="..." />
-            <marker date="1541430774166" expanded="true" signature="806:916" ph="..." />
-            <marker date="1541430774166" expanded="true" signature="938:939" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="330:331" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1172:1221" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1219:1220" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1405:1515" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1537:1538" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1647:1690" ph="..." />
+            <marker date="1541432776410" expanded="true" signature="1722:1818" ph="..." />
           </folding>
         </state>
       </provider>
