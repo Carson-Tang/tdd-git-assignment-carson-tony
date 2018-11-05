@@ -57,4 +57,11 @@ def test_variance_1():
 def test_variance_2():
     assert(variance(list_data2) == round(104/3,3))
 
+def test_standard_deviation_1():
+    pass
+def test_standard_deviation_2():
+    pass
+def test_standard_deviation_3():
+    pass
+
 
