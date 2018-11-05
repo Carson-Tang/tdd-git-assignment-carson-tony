@@ -36,6 +36,13 @@ def test_range_2():
 def test_range_3():
     pass
 
+def test_lowerquartile_1():
+    pass
+def test_lowerquartile_2():
+    pass
+def test_lowerquartile_3():
+    pass
+
 # sum = 66, elements = 11, mean = 6, ans = 296/11
 def test_variance_1():
     assert(variance(list_data) == round(296/11,3))
