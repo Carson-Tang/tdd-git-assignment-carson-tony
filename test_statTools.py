@@ -29,6 +29,13 @@ def test_mode_2():
 def test_mode_3():
     assert(mode(list_data2) == [2, 4])
 
+def test_range_1():
+    pass
+def test_range_2():
+    pass
+def test_range_3():
+    pass
+
 # sum = 66, elements = 11, mean = 6, ans = 296/11
 def test_variance_1():
     assert(variance(list_data) == round(296/11,3))
