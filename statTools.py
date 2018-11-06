@@ -22,6 +22,9 @@ def lower_quartile(list_data):
     if len(list_data) % 2 == 0 :
         arr = list_data[:len(list_data)//2]
         return (arr[len(arr)//2-1] + arr[len(arr)//2])/2
+    else :
+        arr = list_data[:len(list_data)//2]
+        return arr[len(arr)//2]
 
 def variance(list_data):
     if len(list_data) == 0 : return None
