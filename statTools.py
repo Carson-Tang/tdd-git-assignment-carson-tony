@@ -26,6 +26,11 @@ def lower_quartile(list_data):
         arr = list_data[:len(list_data)//2]
         return arr[len(arr)//2]
 
+def upper_quartile(list_data):
+    if len(list_data) == 0 : return None
+    if len(list_data) < 4 : return 0
+
+
 def variance(list_data):
     if len(list_data) == 0 : return None
     mean = sum(list_data) / len(list_data)
