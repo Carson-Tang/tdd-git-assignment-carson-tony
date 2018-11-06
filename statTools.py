@@ -15,6 +15,14 @@ def mode(list_data):
     mode.sort()
     return mode
 
+def lower_quartile(list_data):
+    if len(list_data) == 0 : return None
+    if len(list_data) < 4 : return 0
+    list_data.sort()
+    if len(list_data) % 2 == 0 :
+        arr = list_data[:len(list_data)//2]
+        return (arr[len(arr)//2-1] + arr[len(arr)//2])/2
+
 def variance(list_data):
     if len(list_data) == 0 : return None
     mean = sum(list_data) / len(list_data)
