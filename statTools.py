@@ -20,11 +20,11 @@ def lower_quartile(list_data):
     if len(list_data) < 4 : return 0
     list_data.sort()
     if len(list_data) % 2 == 0 :
-        arr = list_data[:len(list_data)//2]
-        return (arr[len(arr)//2-1] + arr[len(arr)//2])/2
+        list_lowerhalf = list_data[:len(list_data)//2]
+        return (list_lowerhalf[len(list_lowerhalf)//2-1] + list_lowerhalf[len(list_lowerhalf)//2])/2
     else :
-        arr = list_data[:len(list_data)//2]
-        return arr[len(arr)//2]
+        list_lowerhalf = list_data[:len(list_data)//2]
+        return list_lowerhalf[len(list_lowerhalf)//2]
 
 def upper_quartile(list_data):
     if len(list_data) == 0 : return None
