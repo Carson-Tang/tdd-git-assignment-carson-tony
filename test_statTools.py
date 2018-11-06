@@ -3,6 +3,7 @@ from statTools import *
 
 list_data = [0, 9, 6, 2, 4, 7, 20, 1, 5, 4, 8]
 list_data2 = [2, 9, 6, 2, 4, 7, 20, 1, 3, 4, 8, 18]
+list_data3 = [1, 2, 3]
 empty_data = []
 
 def test_mean_1():
