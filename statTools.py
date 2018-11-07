@@ -1,9 +1,10 @@
-def mean(list_data):
-    if len(list_data) == 0 : return None
+import math
+def mean(list_data: list) -> float:
+    if len(list_data) == 0 : return -1
     return sum(list_data) / len(list_data)
 
-def median(list_data):
-    if len(list_data) == 0 : return None
+def median(list_data: list) -> float:
+    if len(list_data) == 0 : return -1
     list_data.sort()
     divider = len(list_data) // 2
     if len(list_data) % 2 == 0:
@@ -40,8 +41,8 @@ def mode(list_data: list) -> list:
     mode.sort()
     return mode
 
-def range(list_data):
-    if len(list_data) == 0 : return None
+def range(list_data: list) -> float:
+    if len(list_data) == 0 : return -1
     list_data.sort()
     return list_data[len(list_data)] - list_data[0]
 
@@ -100,7 +101,7 @@ def variance(list_data: list) -> float:
     # Divide total by list length and round to 3 decimals
     return round(total / len(list_data),3)
 
-def standard_Deviation(list_data):
+def standard_Deviation(list_data: list) -> float:
     if len(list_data) == 0: return None
     mean = sum(list_data) / len(list_data)
     total = 0

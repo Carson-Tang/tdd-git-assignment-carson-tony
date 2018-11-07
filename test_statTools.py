@@ -8,7 +8,7 @@ empty_data = []
 
 
 def test_mean_1():
-    pass
+    assert(mean(empty_data) == -1)
 def test_mean_2():
     pass
 def test_mean_3():
