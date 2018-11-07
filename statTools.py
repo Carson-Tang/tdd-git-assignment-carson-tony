@@ -1,17 +1,29 @@
-def mode(list_data):
-    if len(list_data) == 0 : return None
-    freq = {}
-    mx = 0
-    for num in list_data:
-        if num not in freq:
-            freq[num]=0
-        freq[num]+=1
-        mx = max(mx,freq[num])
+def mode(list_data: list) -> list:
+    ''' Returns mode of list
+
+    :param list_data: list of values
+    :return: list of most frequent values
+    '''
+    # list to return
     mode = []
-    for num,value in freq.items():
-        if value==mx:
+    # map of frequency of each value
+    freq = {}
+    # max occurrences of a value
+    mx = 0
+    # empty list handling
+    if len(list_data) == 0 : return mode
+    for num in list_data:
+        # hash num if not put in freq map
+        if num not in freq:
+            freq[num] = 0
+        # increase value frequency
+        freq[num] += 1
+        # update max occurrences
+        mx = max(mx, freq[num])
+    # add values to return list if they have same occurrence as max occurrences
+    for num, value in freq.items():
+        if value == mx:
             mode.append(num)
-    if len(mode) == 1 : return mode[0]
     mode.sort()
     return mode
 
