@@ -24,13 +24,13 @@ def test_median_3():
 
 
 # Value frequencies - value:frequency
-# empty list, ans = None
+# empty list, ans = empty list
 def test_mode_1():
-    assert(mode(empty_data) == None)
+    assert(mode(empty_data) == [])
 # 0:1, 1:1, 2:1, 4:2, 5:1, 6:1, 7:1, 8:1, 9:1, 20:1
 # 4 is most frequent
 def test_mode_2():
-    assert(mode(list_data) == 4)
+    assert(mode(list_data) == [4])
 # 1:1, 2:2, 3:1, 4:2, 5:1, 6:1, 7:1, 8:1, 9:1, 18:1, 20:1
 # 2 and 4 are most frequent
 def test_mode_3():
@@ -83,7 +83,7 @@ def test_variance_2():
     assert(variance(list_data2) == round(104/3,3))
 # sum = 0, elements = 0, ans = None
 def test_variance_3():
-    assert(variance(empty_data) == None)
+    assert(variance(empty_data) == 0)
 
 
 def test_standard_deviation_1():
