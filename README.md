@@ -1,6 +1,7 @@
 # TDD & Git Assignment
 
 Carson : mode, lowerquartile, upperquartile, variance
+
 Tony : mean, median, range, standard deviation
 
 ## 1) Objective
