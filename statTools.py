@@ -2,7 +2,7 @@ def mode(list_data: list) -> list:
     ''' Returns mode of list
 
     :param list_data: list of values
-    :return: list of most frequent values
+    :return: list, list of most frequent values
     '''
     # list to return
     mode = []
@@ -27,30 +27,57 @@ def mode(list_data: list) -> list:
     mode.sort()
     return mode
 
-def lower_quartile(list_data):
-    if len(list_data) == 0 : return None
-    if len(list_data) < 4 : return 0
+def lower_quartile(list_data: list) -> int:
+    ''' Returns lower quartile of a list
+        Lower quartile : median of lower half of list
+
+    :param list_data: list of values
+    :return: int, lower quartile of list
+    '''
+    # Handling list that is less than 4 values, no lower quartile, returns -1
+    if len(list_data) < 4 : return -1
     list_data.sort()
+    # Create list consisting of lower half of list_data
     list_lowerhalf = list_data[:len(list_data)//2]
+    # Even value count in list_data, even value count in lower half of list
+    # Find median for even/odd list
     if len(list_data) % 2 == 0 :
         return (list_lowerhalf[len(list_lowerhalf)//2 - 1] + list_lowerhalf[len(list_lowerhalf)//2]) / 2
     else :
         return list_lowerhalf[len(list_lowerhalf)//2]
 
-def upper_quartile(list_data):
-    if len(list_data) == 0 : return None
-    if len(list_data) < 4 : return 0
+def upper_quartile(list_data: list) -> int:
+    ''' Return upper quartile of a list
+        Upper quartile : median of upper half of list
+
+    :param list_data: list of values
+    :return: int, upper quartile of list
+    '''
+    # Handling list that is less than 4 values, no upper quartile, returns -1
+    if len(list_data) < 4 : return -1
     list_data.sort()
+    # Create list consisting of upper half of list_data
     list_upperhalf = list_data[len(list_data)//2:]
+    # Even value count in list_data, even value count in upper half of list
+    # Find median for even/odd list
     if len(list_data) % 2 == 0 :
         return (list_upperhalf[len(list_upperhalf)//2 - 1] + list_upperhalf[len(list_upperhalf)//2]) / 2
     else :
         return list_upperhalf[len(list_upperhalf)//2]
 
-def variance(list_data):
-    if len(list_data) == 0 : return None
+def variance(list_data: list) -> float:
+    ''' Return variance of a list
+        Variance : Spread of numbers from the average value in the list
+    :param list_data: list of values
+    :return: float, variance of the list rounded to 3 decimals
+    '''
+    if len(list_data) == 0 : return 0
+    # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
+    # Find difference of each number in list to the mean
     for num in list_data:
+        # Add difference squared to total
         total += abs(mean-num) * abs(mean-num)
+    # Divide total by list length and round to 3 decimals
     return round(total / len(list_data),3)
