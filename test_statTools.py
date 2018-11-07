@@ -70,7 +70,7 @@ def test_upperquartile_1():
 # split lower half = [6, 7] 8, 9 [18, 20], ans = (8+9)/2 = 8.5
 def test_upperquartile_2():
     assert(upper_quartile(list_data2) == 8.5)
-# list of length 3
+# list of length 3, ans = 0
 def test_upperquartile_3():
     assert(upper_quartile(list_data3) == 0)
 
