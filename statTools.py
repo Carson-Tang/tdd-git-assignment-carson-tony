@@ -1,3 +1,16 @@
+def mean(list_data):
+    if len(list_data) == 0 : return None
+    return sum(list_data) / len(list_data)
+
+def median(list_data):
+    if len(list_data) == 0 : return None
+    list_data.sort()
+    divider = len(list_data) // 2
+    if len(list_data) % 2 == 0:
+        return (list_data[divider - 1] + list_data[divider]) / 2
+    else:
+        return list_data[divider]
+
 def mode(list_data: list) -> list:
     ''' Returns mode of list
 
@@ -26,6 +39,11 @@ def mode(list_data: list) -> list:
             mode.append(num)
     mode.sort()
     return mode
+
+def range(list_data):
+    if len(list_data) == 0 : return None
+    list_data.sort()
+    return list_data[len(list_data)] - list_data[0]
 
 def lower_quartile(list_data: list) -> int:
     ''' Returns lower quartile of a list
@@ -81,3 +99,11 @@ def variance(list_data: list) -> float:
         total += abs(mean-num) * abs(mean-num)
     # Divide total by list length and round to 3 decimals
     return round(total / len(list_data),3)
+
+def standard_Deviation(list_data):
+    if len(list_data) == 0: return None
+    mean = sum(list_data) / len(list_data)
+    total = 0
+    for num in list_data:
+        total += abs(mean - num) * abs(mean - num)
+    return round(math.sqrt(total / len(list_data)), 3)
