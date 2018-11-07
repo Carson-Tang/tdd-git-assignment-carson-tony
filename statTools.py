@@ -21,24 +21,18 @@ def lower_quartile(list_data):
     list_data.sort()
     list_lowerhalf = list_data[:len(list_data)//2]
     if len(list_data) % 2 == 0 :
-        #list_lowerhalf = list_data[:len(list_data)//2]
         return (list_lowerhalf[len(list_lowerhalf)//2 - 1] + list_lowerhalf[len(list_lowerhalf)//2]) / 2
     else :
-        #list_lowerhalf = list_data[:len(list_data)//2]
         return list_lowerhalf[len(list_lowerhalf)//2]
 
 def upper_quartile(list_data):
     if len(list_data) == 0 : return None
     if len(list_data) < 4 : return 0
     list_data.sort()
-    print(list_data)
     list_upperhalf = list_data[len(list_data)//2:]
     if len(list_data) % 2 == 0 :
-        #list_upperhalf = list_data[len(list_data)//2:]
-        print(list_upperhalf)
         return (list_upperhalf[len(list_upperhalf)//2 - 1] + list_upperhalf[len(list_upperhalf)//2]) / 2
     else :
-        print(list_upperhalf)
         return list_upperhalf[len(list_upperhalf)//2]
 
 def variance(list_data):
