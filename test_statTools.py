@@ -38,11 +38,11 @@ def test_mode_3():
 
 
 def test_range_1():
-    pass
+    assert(range(empty_data) == -1)
 def test_range_2():
-    pass
+    assert(range(list_data) == 20)
 def test_range_3():
-    pass
+    assert(range(list_data2) == 19)
 
 
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]

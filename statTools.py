@@ -44,7 +44,7 @@ def mode(list_data: list) -> list:
 def range(list_data: list) -> float:
     if len(list_data) == 0 : return -1
     list_data.sort()
-    return list_data[len(list_data)] - list_data[0]
+    return list_data[len(list_data) - 1] - list_data[0]
 
 def lower_quartile(list_data: list) -> int:
     ''' Returns lower quartile of a list
