@@ -16,11 +16,11 @@ def test_mean_3():
 
 
 def test_median_1():
-    pass
+    assert(median(empty_data) == -1)
 def test_median_2():
-    pass
+    assert(median(list_data3) == 2)
 def test_median_3():
-    pass
+    assert(median(list_data) == 5)
 
 
 # Value frequencies - value:frequency
