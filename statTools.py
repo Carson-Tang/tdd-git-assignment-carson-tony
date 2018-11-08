@@ -1,9 +1,20 @@
-def mean(list_data):
-    if len(list_data) == 0 : return None
+import math
+def mean(list_data: list) -> float:
+    ''' Returns mean of list
+
+        :param list_data: list of values
+        :return: float, mean of the list
+        '''
+    if len(list_data) == 0 : return -1
     return sum(list_data) / len(list_data)
 
-def median(list_data):
-    if len(list_data) == 0 : return None
+def median(list_data: list) -> float:
+    ''' Returns median of list
+
+    :param list_data: list of values
+    :return: float, median of the list
+    '''
+    if len(list_data) == 0 : return -1
     list_data.sort()
     divider = len(list_data) // 2
     if len(list_data) % 2 == 0:
@@ -40,10 +51,15 @@ def mode(list_data: list) -> list:
     mode.sort()
     return mode
 
-def range(list_data):
-    if len(list_data) == 0 : return None
+def range(list_data: list) -> float:
+    ''' Returns range of list
+
+    :param list_data: list of values
+    :return: float, range of the list
+    '''
+    if len(list_data) == 0 : return -1
     list_data.sort()
-    return list_data[len(list_data)] - list_data[0]
+    return list_data[len(list_data) - 1] - list_data[0]
 
 def lower_quartile(list_data: list) -> int:
     ''' Returns lower quartile of a list
@@ -100,8 +116,13 @@ def variance(list_data: list) -> float:
     # Divide total by list length and round to 3 decimals
     return round(total / len(list_data),3)
 
-def standard_Deviation(list_data):
-    if len(list_data) == 0: return None
+def standard_Deviation(list_data: list) -> float:
+    ''' Returns standard deviation of list
+        Standard Deviation: the square root of the spread of numbers from the average value in the list
+    :param list_data: list of values
+    :return: float, standard deviation of the list rounded to 3 decimals
+    '''
+    if len(list_data) == 0: return -1
     mean = sum(list_data) / len(list_data)
     total = 0
     for num in list_data:
