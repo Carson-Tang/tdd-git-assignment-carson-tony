@@ -102,7 +102,7 @@ def variance(list_data: list) -> float:
     return round(total / len(list_data),3)
 
 def standard_Deviation(list_data: list) -> float:
-    if len(list_data) == 0: return None
+    if len(list_data) == 0: return -1
     mean = sum(list_data) / len(list_data)
     total = 0
     for num in list_data:

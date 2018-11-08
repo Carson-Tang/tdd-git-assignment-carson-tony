@@ -1,4 +1,5 @@
 import pytest
+import math
 from statTools import *
 
 list_data = [0, 9, 6, 2, 4, 7, 20, 1, 5, 4, 8]
@@ -87,10 +88,10 @@ def test_variance_3():
 
 
 def test_standard_deviation_1():
-    pass
+    assert(standard_Deviation(empty_data) == -1)
 def test_standard_deviation_2():
-    pass
+    assert(standard_Deviation(list_data) == round(math.sqrt(296/11),3))
 def test_standard_deviation_3():
-    pass
+    assert(standard_Deviation(list_data2) == round(math.sqrt(104/3),3))
 
 
