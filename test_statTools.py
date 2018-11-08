@@ -10,9 +10,9 @@ empty_data = []
 def test_mean_1():
     assert(mean(empty_data) == -1)
 def test_mean_2():
-    pass
+    assert(mean(list_data) == 6)
 def test_mean_3():
-    pass
+    assert(mean(list_data2) == 7)
 
 
 def test_median_1():
@@ -57,7 +57,7 @@ def test_lowerquartile_2():
     assert(lower_quartile(list_data2) == 2.5)
 # Empty list, ans = 0
 def test_lowerquartile_3():
-    assert(lower_quartile(empty_data) == None)
+    assert(lower_quartile(empty_data) == -1)
 
 
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
@@ -72,7 +72,7 @@ def test_upperquartile_2():
     assert(upper_quartile(list_data2) == 8.5)
 # list of length 3, ans = 0
 def test_upperquartile_3():
-    assert(upper_quartile(list_data3) == 0)
+    assert(upper_quartile(list_data3) == -1)
 
 
 # sum = 66, elements = 11, mean = 6, ans = 296/11
