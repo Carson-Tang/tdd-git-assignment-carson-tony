@@ -1,9 +1,19 @@
 import math
 def mean(list_data: list) -> float:
+    ''' Returns mean of list
+
+        :param list_data: list of values
+        :return: float, mean of the list
+        '''
     if len(list_data) == 0 : return -1
     return sum(list_data) / len(list_data)
 
 def median(list_data: list) -> float:
+    ''' Returns median of list
+
+    :param list_data: list of values
+    :return: float, median of the list
+    '''
     if len(list_data) == 0 : return -1
     list_data.sort()
     divider = len(list_data) // 2
@@ -42,6 +52,11 @@ def mode(list_data: list) -> list:
     return mode
 
 def range(list_data: list) -> float:
+    ''' Returns range of list
+
+    :param list_data: list of values
+    :return: float, range of the list
+    '''
     if len(list_data) == 0 : return -1
     list_data.sort()
     return list_data[len(list_data) - 1] - list_data[0]
@@ -102,6 +117,11 @@ def variance(list_data: list) -> float:
     return round(total / len(list_data),3)
 
 def standard_Deviation(list_data: list) -> float:
+    ''' Returns standard deviation of list
+        Standard Deviation: the square root of the spread of numbers from the average value in the list
+    :param list_data: list of values
+    :return: float, standard deviation of the list rounded to 3 decimals
+    '''
     if len(list_data) == 0: return -1
     mean = sum(list_data) / len(list_data)
     total = 0
