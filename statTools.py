@@ -105,7 +105,7 @@ def variance(list_data: list) -> float:
     :param list_data: list of values
     :return: float, variance of the list rounded to 3 decimals
     '''
-    if len(list_data) == 0 : return 0
+    if len(list_data) == 0 : return -1
     # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
@@ -114,7 +114,7 @@ def variance(list_data: list) -> float:
         # Add difference squared to total
         total += abs(mean-num) * abs(mean-num)
     # Divide total by list length and round to 3 decimals
-    return round(total / len(list_data),3)
+    return round(total / len(list_data), 3)
 
 def standard_Deviation(list_data: list) -> float:
     ''' Returns standard deviation of list
