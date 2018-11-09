@@ -37,6 +37,8 @@ def mode(list_data: list) -> list:
     # empty list handling
     if len(list_data) == 0 : return mode
     for num in list_data:
+        if not isinstance(num,int):
+            raise ValueError("List contains non integer value")
         # hash num if not put in freq map
         if num not in freq:
             freq[num] = 0

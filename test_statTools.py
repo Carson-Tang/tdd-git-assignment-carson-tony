@@ -5,6 +5,7 @@ from statTools import *
 list_data = [0, 9, 6, 2, 4, 7, 20, 1, 5, 4, 8]
 list_data2 = [2, 9, 6, 2, 4, 7, 20, 1, 3, 4, 8, 18]
 list_data3 = [1, 2, 3]
+str_data = [5, 4, 3, 2, 1, "test"]
 empty_data = []
 
 
@@ -36,7 +37,11 @@ def test_mode_2():
 # 2 and 4 are most frequent
 def test_mode_3():
     assert(mode(list_data2) == [2, 4])
-
+# string in list, ans = ValueError
+def test_mode_valueError():
+    with pytest.raises(ValueError) as error:
+        mode(str_data)
+    assert("List contains non integer value" == str(error.value))
 
 def test_range_1():
     assert(range(empty_data) == -1)
