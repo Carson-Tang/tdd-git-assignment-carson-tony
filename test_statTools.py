@@ -61,7 +61,7 @@ def test_lowerquartile_1():
 # split lower half = [1, 2] 2, 3 [4, 4], ans = (2+3)/2 = 2.5
 def test_lowerquartile_2():
     assert(lower_quartile(list_data2) == 2.5)
-# Empty list, ans = 0
+# Empty list, ans = -1
 def test_lowerquartile_3():
     assert(lower_quartile(empty_data) == -1)
 
@@ -76,7 +76,7 @@ def test_upperquartile_1():
 # split lower half = [6, 7] 8, 9 [18, 20], ans = (8+9)/2 = 8.5
 def test_upperquartile_2():
     assert(upper_quartile(list_data2) == 8.5)
-# list of length 3, ans = 0
+# list of length 3, ans = -1
 def test_upperquartile_3():
     assert(upper_quartile(list_data3) == -1)
 
@@ -87,7 +87,7 @@ def test_variance_1():
 # sum = 84, elements = 12, mean = 7, ans = 416/12 = 104/3
 def test_variance_2():
     assert(variance(list_data2) == round(104/3,3))
-# sum = 0, elements = 0, ans = None
+# sum = 0, elements = 0, ans = -1
 def test_variance_3():
     assert(variance(empty_data) == -1)
 
