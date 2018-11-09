@@ -72,6 +72,9 @@ def lower_quartile(list_data: list) -> int:
     '''
     # Handling list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
+    for value in list_data:
+        if not isinstance(value,int):
+            raise ValueError("List contains non integer value")
     list_data.sort()
     # Create list consisting of lower half of list_data
     list_lowerhalf = list_data[:len(list_data)//2]

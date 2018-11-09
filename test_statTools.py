@@ -64,7 +64,10 @@ def test_lowerquartile_2():
 # Empty list, ans = -1
 def test_lowerquartile_3():
     assert(lower_quartile(empty_data) == -1)
-
+def test_lowerquartile_valueError():
+    with pytest.raises(ValueError) as error:
+        lower_quartile(str_data)
+    assert("List contains non integer value" == str(error.value))
 
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
 # split = [0, 1, 2, 4, 4] [6, 7, 8, 9, 20]
