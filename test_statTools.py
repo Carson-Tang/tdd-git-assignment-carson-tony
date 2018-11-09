@@ -84,7 +84,7 @@ def test_variance_2():
     assert(variance(list_data2) == round(104/3,3))
 # sum = 0, elements = 0, ans = None
 def test_variance_3():
-    assert(variance(empty_data) == 0)
+    assert(variance(empty_data) == -1)
 
 
 def test_standard_deviation_1():
