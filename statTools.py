@@ -100,7 +100,7 @@ def lower_quartile(list_data: list) -> int:
     # Handle list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
-    if not_int_list(list_data) : raise("List contains non integer value")
+    if not_int_list(list_data) : raise ValueError("List contains non integer value")
 
     list_data.sort()
     # Create list consisting of lower half of list_data
@@ -123,7 +123,7 @@ def upper_quartile(list_data: list) -> int:
     # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
-    if not_int_list(list_data) : raise ("List contains non integer value")
+    if not_int_list(list_data) : raise ValueError("List contains non integer value")
 
     list_data.sort()
     # Create list consisting of upper half of list_data
@@ -146,7 +146,7 @@ def variance(list_data: list) -> float:
     # Empty list exception
     if len(list_data) == 0 : return -1
     # List contains value that is not int
-    if not_int_list(list_data) : raise("List contains non integer value")
+    if not_int_list(list_data) : raise ValueError("List contains non integer value")
     # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
