@@ -1,4 +1,3 @@
-
 import math
 def mean(list_data: list) -> float:
     ''' Returns mean of list
@@ -6,9 +5,7 @@ def mean(list_data: list) -> float:
         :param list_data: list of values
         :return: float, mean of the list
         '''
-    # Empty list handling
     if len(list_data) == 0 : return -1
-    # Add all values of list then divide by the length of list
     return sum(list_data) / len(list_data)
 
 def median(list_data: list) -> float:
@@ -17,17 +14,12 @@ def median(list_data: list) -> float:
     :param list_data: list of values
     :return: float, median of the list
     '''
-    # Empty list handling
     if len(list_data) == 0 : return -1
-    # Sort the list
     list_data.sort()
-    # Middle value of the list
     divider = len(list_data) // 2
     if len(list_data) % 2 == 0:
-        # If the list len is even return the mean of the 2 middle value
         return (list_data[divider - 1] + list_data[divider]) / 2
     else:
-        # Return the middle value of the list
         return list_data[divider]
 
 def mode(list_data: list) -> list:
@@ -65,11 +57,8 @@ def range(list_data: list) -> float:
     :param list_data: list of values
     :return: float, range of the list
     '''
-    # empty list handling
     if len(list_data) == 0 : return -1
-    # sort the list
     list_data.sort()
-    # take the last (greatest value) and subtracts the first (smallest value)
     return list_data[len(list_data) - 1] - list_data[0]
 
 def lower_quartile(list_data: list) -> int:
@@ -134,12 +123,8 @@ def standard_Deviation(list_data: list) -> float:
     :return: float, standard deviation of the list rounded to 3 decimals
     '''
     if len(list_data) == 0: return -1
-    # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
-    # find difference of each number in the list to the mean
     for num in list_data:
-        # Add difference squared to total
         total += abs(mean - num) * abs(mean - num)
-    # Square root of total that was divided by list length and rounded to 3 decimals
     return round(math.sqrt(total / len(list_data)), 3)
