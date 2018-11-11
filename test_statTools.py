@@ -1,12 +1,20 @@
 import pytest
 from statTools import *
 
+# Different lists to test various cases
+# Odd number of values
 list_data = [0, 9, 6, 2, 4, 7, 20, 1, 5, 4, 8]
+# Even number of values
 list_data2 = [2, 9, 6, 2, 4, 7, 20, 1, 3, 4, 8, 18]
+# List of 3 values
 list_data3 = [1, 2, 3]
+# List of 0's
 list_of_zero = [0, 0, 0]
+# List that contains a string
 str_data = [5, 4, 3, 2, 1, "test"]
+# List that contains floats
 float_data = [1.0, 3.5, 9.1, 2.7, 8.2]
+# Empty list
 empty_data = []
 
 
