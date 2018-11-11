@@ -62,7 +62,7 @@ def mode(list_data: list) -> list:
     # max occurrences of a value
     mx = 0
     # Handle non list input
-    if not isinstance(list_data, list) : raise TypeError("Parameter must be list")
+    if not isinstance(list_data, list) : raise TypeError("Not list")
     # Handle non int in list
     if not_int_list(list_data) : raise ValueError("List contains non integer value")
     for num in list_data:
@@ -100,7 +100,7 @@ def lower_quartile(list_data: list) -> int:
     Author: Tang.C
     '''
     # Handle non list input
-    if not isinstance(list_data, list) : raise TypeError("Parameter must be list")
+    if not isinstance(list_data, list) : raise TypeError("Not list")
     # Handle list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
@@ -125,7 +125,7 @@ def upper_quartile(list_data: list) -> int:
     Author: Tang.C
     '''
     # Handle non list input
-    if not isinstance(list_data, list) : raise TypeError("Parameter must be list")
+    if not isinstance(list_data, list) : raise TypeError("Not list")
     # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
@@ -150,7 +150,7 @@ def variance(list_data: list) -> float:
     Author: Tang.C
     '''
     # Handle non list input
-    if not isinstance(list_data, list) : raise TypeError("Parameter must be list")
+    if not isinstance(list_data, list) : raise TypeError("Not list")
     # Empty list exception
     if len(list_data) == 0 : return -1
     # List contains value that is not int
