@@ -1,3 +1,13 @@
+"""
+------------------------------------------------------------------------------------------------------------------------
+Name: test_statTools.py
+Purpose:
+    Tests for Functions of Measures of Central Tendencies and Measures of Spread
+
+Author: Tang.C, Ni.T
+Created: 2018/11/11
+------------------------------------------------------------------------------------------------------------------------
+"""
 import pytest
 from statTools import *
 

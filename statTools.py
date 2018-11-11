@@ -2,8 +2,8 @@
 ------------------------------------------------------------------------------------------------------------------------
 Name: statTools.py
 Purpose:
-    Functions for Measures of Central Tendencies and Measures of Spread
-    - mean, median, mode - range, upper quartile, lower quartile, variance, standard deviation
+    Functions for Measures of Central Tendencies and Measures of Spread for
+    Includes : mean, median, mode, range, upper quartile, lower quartile, variance and standard deviation
 Author: Tang.C, Ni.T
 Created: 2018/11/11
 ------------------------------------------------------------------------------------------------------------------------
