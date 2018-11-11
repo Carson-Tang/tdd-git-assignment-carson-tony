@@ -45,11 +45,9 @@ def mode(list_data: list) -> list:
     freq = {}
     # max occurrences of a value
     mx = 0
-    # empty list handling
-    if len(list_data) == 0 : return mode
+    # Handle non int in list
+    if not_int_list(list_data) : raise("List contains non integer value")
     for num in list_data:
-        if not isinstance(num,int):
-            raise ValueError("List contains non integer value")
         # hash num if not put in freq map
         if num not in freq:
             freq[num] = 0
@@ -81,11 +79,11 @@ def lower_quartile(list_data: list) -> int:
     :param list_data: list of values
     :return: int, lower quartile of list
     '''
-    # Handling list that is less than 4 values, no lower quartile, returns -1
+    # Handle list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
-    for value in list_data:
-        if not isinstance(value,int):
-            raise ValueError("List contains non integer value")
+    # Handle non int in list
+    if not_int_list(list_data) : raise("List contains non integer value")
+
     list_data.sort()
     # Create list consisting of lower half of list_data
     list_lowerhalf = list_data[:len(list_data)//2]
@@ -103,8 +101,11 @@ def upper_quartile(list_data: list) -> int:
     :param list_data: list of values
     :return: int, upper quartile of list
     '''
-    # Handling list that is less than 4 values, no upper quartile, returns -1
+    # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
+    # Handle non int in list
+    if not_int_list(list_data) : raise("List contains non integer value")
+
     list_data.sort()
     # Create list consisting of upper half of list_data
     list_upperhalf = list_data[len(list_data)//2:]
@@ -124,7 +125,7 @@ def variance(list_data: list) -> float:
     # Empty list exception
     if len(list_data) == 0 : return -1
     # List contains value that is not int
-    if not_int_list(list_data) : return -1
+    if not_int_list(list_data) : raise("List contains non integer value")
     # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
