@@ -120,6 +120,8 @@ def upper_quartile(list_data: list) -> int:
     :return: int, upper quartile of list
     Author: Tang.C
     '''
+    # Handle non list input
+    if not isinstance(list_data,list) : raise TypeError("Parameter must be list")
     # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
