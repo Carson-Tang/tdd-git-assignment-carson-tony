@@ -50,7 +50,9 @@ def median(list_data: list) -> float:
 
 def mode(list_data: list) -> list:
     mode = []
+    if not isinstance(list_data, list): raise TypeError("Not list")
     if len(list_data) == 0 : return mode
+
 
 def range(list_data: list) -> float:
     ''' Returns range of list
