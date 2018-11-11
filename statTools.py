@@ -48,37 +48,7 @@ def median(list_data: list) -> float:
     else:
         return list_data[divider]
 
-def mode(list_data: list) -> list:
-    ''' Returns mode of list
 
-    :param list_data: list of values
-    :return: list, list of most frequent values
-    Author: Tang.C
-    '''
-    # list to return
-    mode = []
-    # map of frequency of each value
-    freq = {}
-    # max occurrences of a value
-    mx = 0
-    # Handle non list input
-    if not isinstance(list_data, list) : raise TypeError("Not list")
-    # Handle non int in list
-    if not_int_list(list_data) : raise ValueError("List contains non integer value")
-    for num in list_data:
-        # hash num if not put in freq map
-        if num not in freq:
-            freq[num] = 0
-        # increase value frequency
-        freq[num] += 1
-        # update max occurrences
-        mx = max(mx, freq[num])
-    # add values to return list if they have same occurrence as max occurrences
-    for num, value in freq.items():
-        if value == mx:
-            mode.append(num)
-    mode.sort()
-    return mode
 
 def range(list_data: list) -> float:
     ''' Returns range of list
