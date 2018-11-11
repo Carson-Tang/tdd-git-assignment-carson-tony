@@ -1,3 +1,13 @@
+"""
+------------------------------------------------------------------------------------------------------------------------
+Name: statTools.py
+Purpose:
+    Functions for Measures of Central Tendencies and Measures of Spread
+    - mean, median, mode - range, upper quartile, lower quartile, variance, standard deviation
+Author: Tang.C, Ni.T
+Created: 2018/11/11
+------------------------------------------------------------------------------------------------------------------------
+"""
 import math
 def not_int_list(list_data: list) -> bool:
     ''' Determine if list contains non integer value
