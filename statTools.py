@@ -60,10 +60,13 @@ def mode(list_data: list) -> list:
     # Maximum occurence of a value
     mx = 0
     for num in list_data:
+        # Hash num if not accounted for yet
         if num not in freq:
             freq[num] = 0
+        # Increase occurence by 1
         freq[num] += 1
         mx = max(mx, freq[num])
+    # Iterate through keys, add all numbers with same frequency as maximum
     for num, value in freq.items():
         if value == mx:
             mode.append(num)
