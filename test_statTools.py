@@ -1,5 +1,4 @@
 import pytest
-import math
 from statTools import *
 
 list_data = [0, 9, 6, 2, 4, 7, 20, 1, 5, 4, 8]
@@ -39,8 +38,7 @@ def test_mode_3():
     assert(mode(list_data2) == [2, 4])
 # string in list, ans = ValueError
 def test_mode_valueError():
-    with pytest.raises(ValueError) as error:
-        mode(str_data)
+    with pytest.raises(ValueError) as error : mode(str_data)
     assert("List contains non integer value" == str(error.value))
 
 def test_range_1():
@@ -65,8 +63,7 @@ def test_lowerquartile_2():
 def test_lowerquartile_3():
     assert(lower_quartile(empty_data) == -1)
 def test_lowerquartile_valueError():
-    with pytest.raises(ValueError) as error:
-        lower_quartile(str_data)
+    with pytest.raises(ValueError) as error : lower_quartile(str_data)
     assert("List contains non integer value" == str(error.value))
 
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
