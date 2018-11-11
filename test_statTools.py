@@ -26,8 +26,10 @@ str_data = [5, 4, 3, 2, 1, "test"]
 float_data = [1.0, 3.5, 9.1, 2.7, 8.2]
 # Empty list
 empty_data = []
+# Non list
+number = 10
 
-
+##### Mean #####
 def test_mean_1():
     assert(mean(empty_data) == -1)
 
@@ -37,7 +39,7 @@ def test_mean_2():
 def test_mean_3():
     assert(mean(list_data2) == 7)
 
-
+##### Median #####
 def test_median_1():
     assert(median(empty_data) == -1)
 
@@ -47,7 +49,7 @@ def test_median_2():
 def test_median_3():
     assert(median(list_data) == 5)
 
-
+##### Mode #####
 # Value frequencies - value:frequency
 # Empty list, ans = []
 def test_mode_1():
@@ -71,7 +73,7 @@ def test_mode_valueError():
     with pytest.raises(ValueError) as error : mode(str_data)
     assert("List contains non integer value" == str(error.value))
 
-
+##### Range #####
 def test_range_1():
     assert(range(empty_data) == -1)
 
@@ -81,7 +83,7 @@ def test_range_2():
 def test_range_3():
     assert(range(list_data2) == 19)
 
-
+##### Lower Quartile #####
 # Sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
 # Split = [0, 1, 2, 4, 4] [6, 7, 8, 9, 20]
 # Split lower half = [0, 1] 2 [4, 4] , ans = 2
@@ -108,7 +110,7 @@ def test_lowerquartile_valueError2():
     with pytest.raises(ValueError) as error : lower_quartile(str_data)
     assert("List contains non integer value" == str(error.value))
 
-
+##### Upper Quartile #####
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
 # split = [0, 1, 2, 4, 4] [6, 7, 8, 9, 20]
 # split top half = [6, 7] 8 [9, 20], ans = 8
@@ -118,7 +120,6 @@ def test_upperquartile_1():
 # sorted list = [1, 2, 2, 3, 4, 4, 6, 7, 8, 9, 18, 20]
 # split = [1, 2, 2, 3, 4, 4] [6, 7, 8, 9, 18, 20]
 # split lower half = [6, 7] 8, 9 [18, 20], ans = (8+9)/2 = 8.5
-
 def test_upperquartile_2():
     assert(upper_quartile(list_data2) == 8.5)
 
@@ -126,7 +127,7 @@ def test_upperquartile_2():
 def test_upperquartile_3():
     assert(upper_quartile(list_data3) == -1)
 
-
+##### Variance #####
 # sum = 66, elements = 11, mean = 6, ans = 296/11
 def test_variance_1():
     assert(variance(list_data) == round(296/11, 3))
@@ -140,7 +141,7 @@ def test_variance_3():
     assert(variance(empty_data) == -1)
 
 
-
+##### Standard Deviation #####
 def test_standard_deviation_1():
     assert(standard_Deviation(empty_data) == -1)
 
