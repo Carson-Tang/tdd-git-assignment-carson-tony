@@ -110,7 +110,10 @@ def variance(list_data: list) -> float:
     :param list_data: list of values
     :return: float, variance of the list rounded to 3 decimals
     '''
+    # Empty list exception
     if len(list_data) == 0 : return -1
+    # List contains value that is not int
+    if not_int_list(list_data) : return -1
     # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0

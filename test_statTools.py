@@ -86,7 +86,7 @@ def test_lowerquartile_valueError():
     assert("List contains non integer value" == str(error.value))
 
 # String in list, ans = ValueError
-def test_lowerquartile_valueError():
+def test_lowerquartile_valueError2():
     with pytest.raises(ValueError) as error : lower_quartile(str_data)
     assert("List contains non integer value" == str(error.value))
 
