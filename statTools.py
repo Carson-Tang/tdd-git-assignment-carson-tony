@@ -1,4 +1,15 @@
 import math
+def not_int_list(list_data: list) -> bool:
+    ''' Determine if list contains non integer value
+
+    :param list_data: list of values
+    :return: bool, True if list contains non int, otherwise False
+    '''
+    for value in list_data:
+        if not isinstance(value,int):
+            return True
+    return False
+
 def mean(list_data: list) -> float:
     ''' Returns mean of list
 
