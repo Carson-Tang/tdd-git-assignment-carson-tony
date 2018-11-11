@@ -51,6 +51,7 @@ def median(list_data: list) -> float:
 def mode(list_data: list) -> list:
     mode = []
     if not isinstance(list_data, list): raise TypeError("Not list")
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     if len(list_data) == 0 : return mode
 
 
