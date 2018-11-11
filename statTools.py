@@ -50,7 +50,7 @@ def median(list_data: list) -> float:
 
 def mode(list_data: list) -> list:
     # List of values to return
-    mode = []
+    ret_mode = []
     # Handle exception if list_data is not a list
     if not isinstance(list_data, list): raise TypeError("Not list")
     # Handle exception if list_data contains non int
@@ -69,9 +69,9 @@ def mode(list_data: list) -> list:
     # Iterate through keys, add all numbers with same frequency as maximum
     for num, value in freq.items():
         if value == mx:
-            mode.append(num)
-    mode.sort()
-    return mode
+            ret_mode.append(num)
+    ret_mode.sort()
+    return ret_mode
 
 def range(list_data: list) -> float:
     ''' Returns range of list
