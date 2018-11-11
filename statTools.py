@@ -5,8 +5,10 @@ def not_int_list(list_data: list) -> bool:
     :param list_data: list of values
     :return: bool, True if list contains non int, otherwise False
     '''
+    # Loop through list
     for value in list_data:
-        if not isinstance(value,int):
+        # Return true if the value is not int
+        if not isinstance(value, int):
             return True
     return False
 
@@ -104,7 +106,7 @@ def upper_quartile(list_data: list) -> int:
     # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
     # Handle non int in list
-    if not_int_list(list_data) : raise("List contains non integer value")
+    if not_int_list(list_data) : raise ("List contains non integer value")
 
     list_data.sort()
     # Create list consisting of upper half of list_data
