@@ -1,3 +1,4 @@
+
 import math
 def mean(list_data: list) -> float:
     ''' Returns mean of list
