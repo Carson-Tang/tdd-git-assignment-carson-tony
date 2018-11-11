@@ -1,9 +1,20 @@
+"""
+------------------------------------------------------------------------------------------------------------------------
+Name: statTools.py
+Purpose:
+    Functions for Measures of Central Tendencies and Measures of Spread for
+    Includes : mean, median, mode, range, upper quartile, lower quartile, variance and standard deviation
+Author: Tang.C, Ni.T
+Created: 2018/11/11
+------------------------------------------------------------------------------------------------------------------------
+"""
 import math
 def not_int_list(list_data: list) -> bool:
     ''' Determine if list contains non integer value
 
     :param list_data: list of values
     :return: bool, True if list contains non int, otherwise False
+    Author: Tang.C
     '''
     # Loop through list
     for value in list_data:
@@ -15,8 +26,9 @@ def not_int_list(list_data: list) -> bool:
 def mean(list_data: list) -> float:
     ''' Returns mean of list
 
-        :param list_data: list of values
-        :return: float, mean of the list
+    :param list_data: list of values
+    :return: float, mean of the list
+    Author: Ni.T
     '''
     if len(list_data) == 0 : return -1
     return sum(list_data) / len(list_data)
@@ -26,6 +38,7 @@ def median(list_data: list) -> float:
 
     :param list_data: list of values
     :return: float, median of the list
+    Author: Ni.T
     '''
     if len(list_data) == 0 : return -1
     list_data.sort()
@@ -40,6 +53,7 @@ def mode(list_data: list) -> list:
 
     :param list_data: list of values
     :return: list, list of most frequent values
+    Author: Tang.C
     '''
     # list to return
     mode = []
@@ -69,6 +83,7 @@ def range(list_data: list) -> float:
 
     :param list_data: list of values
     :return: float, range of the list
+    Author: Ni.T
     '''
     if len(list_data) == 0 : return -1
     list_data.sort()
@@ -80,6 +95,7 @@ def lower_quartile(list_data: list) -> int:
 
     :param list_data: list of values
     :return: int, lower quartile of list
+    Author: Tang.C
     '''
     # Handle list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
@@ -102,6 +118,7 @@ def upper_quartile(list_data: list) -> int:
 
     :param list_data: list of values
     :return: int, upper quartile of list
+    Author: Tang.C
     '''
     # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
@@ -124,6 +141,7 @@ def variance(list_data: list) -> float:
 
     :param list_data: list of values
     :return: float, variance of the list rounded to 3 decimals
+    Author: Tang.C
     '''
     # Empty list exception
     if len(list_data) == 0 : return -1
@@ -144,6 +162,7 @@ def standard_Deviation(list_data: list) -> float:
         Standard Deviation: the square root of the spread of numbers from the average value in the list
     :param list_data: list of values
     :return: float, standard deviation of the list rounded to 3 decimals
+    Author: Ni.T
     '''
     if len(list_data) == 0: return -1
     mean = sum(list_data) / len(list_data)
