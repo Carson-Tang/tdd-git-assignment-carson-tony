@@ -127,6 +127,7 @@ def test_upperquartile_2():
 def test_upperquartile_3():
     assert(upper_quartile(list_data3) == -1)
 
+# Number as parameter
 def test_upperquartile_typeError():
     with pytest.raises(TypeError) as error : upper_quartile(number)
     assert("Parameter must be list" == str(error.value))
@@ -144,6 +145,13 @@ def test_variance_2():
 def test_variance_3():
     assert(variance(empty_data) == -1)
 
+def test_variance_valueError():
+    with pytest.raises(ValueError) as error : variance(float_data)
+    assert("List contains non integer value" == str(error.value))
+
+def test_variance_typeError():
+    with pytest.raises(TypeError) as error : variance(number)
+    assert("Parameter must be list" == str(error.value))
 
 ##### Standard Deviation #####
 def test_standard_deviation_1():
