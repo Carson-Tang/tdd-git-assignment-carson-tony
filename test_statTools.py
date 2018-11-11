@@ -127,6 +127,10 @@ def test_upperquartile_2():
 def test_upperquartile_3():
     assert(upper_quartile(list_data3) == -1)
 
+def test_upperquartile_typeError():
+    with pytest.raises(TypeError) as error : upper_quartile(number)
+    assert("Parameter must be list" == str(error.value))
+
 ##### Variance #####
 # sum = 66, elements = 11, mean = 6, ans = 296/11
 def test_variance_1():
