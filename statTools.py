@@ -62,7 +62,7 @@ def mode(list_data: list) -> list:
     # max occurrences of a value
     mx = 0
     # Handle non int in list
-    if not_int_list(list_data) : raise("List contains non integer value")
+    if not_int_list(list_data) : raise ValueError("List contains non integer value")
     for num in list_data:
         # hash num if not put in freq map
         if num not in freq:
