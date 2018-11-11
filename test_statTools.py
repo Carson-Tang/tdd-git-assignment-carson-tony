@@ -6,6 +6,7 @@ list_data2 = [2, 9, 6, 2, 4, 7, 20, 1, 3, 4, 8, 18]
 list_data3 = [1, 2, 3]
 list_of_zero = [0, 0, 0]
 str_data = [5, 4, 3, 2, 1, "test"]
+float_data = [1.0, 3.5, 9.1, 2.7, 8.2]
 empty_data = []
 
 
@@ -42,15 +43,15 @@ def test_mode_2():
 def test_mode_3():
     assert(mode(list_data2) == [2, 4])
 
-# String in list, ans = ValueError
-def test_mode_valueError():
-    with pytest.raises(ValueError) as error : mode(str_data)
-    assert("List contains non integer value" == str(error.value))
-
 # List of zeros
 # 0:3, ans = [0]
 def test_mode_4():
     assert(mode(list_of_zero) == [0])
+
+# String in list, ans = ValueError
+def test_mode_valueError():
+    with pytest.raises(ValueError) as error : mode(str_data)
+    assert("List contains non integer value" == str(error.value))
 
 
 def test_range_1():
@@ -79,10 +80,16 @@ def test_lowerquartile_2():
 def test_lowerquartile_3():
     assert(lower_quartile(empty_data) == -1)
 
+# Float in list, ans = ValueError
+def test_lowerquartile_valueError():
+    with pytest.raises(ValueError) as error : lower_quartile(float_data)
+    assert("List contains non integer value" == str(error.value))
+
 # String in list, ans = ValueError
 def test_lowerquartile_valueError():
     with pytest.raises(ValueError) as error : lower_quartile(str_data)
     assert("List contains non integer value" == str(error.value))
+
 
 # sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
 # split = [0, 1, 2, 4, 4] [6, 7, 8, 9, 20]
@@ -104,15 +111,16 @@ def test_upperquartile_3():
 
 # sum = 66, elements = 11, mean = 6, ans = 296/11
 def test_variance_1():
-    assert(variance(list_data) == round(296/11,3))
+    assert(variance(list_data) == round(296/11, 3))
 
 # sum = 84, elements = 12, mean = 7, ans = 416/12 = 104/3
 def test_variance_2():
-    assert(variance(list_data2) == round(104/3,3))
+    assert(variance(list_data2) == round(104/3, 3))
 
 # sum = 0, elements = 0, ans = -1
 def test_variance_3():
     assert(variance(empty_data) == -1)
+
 
 
 def test_standard_deviation_1():
