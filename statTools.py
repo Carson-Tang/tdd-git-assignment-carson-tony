@@ -53,7 +53,18 @@ def mode(list_data: list) -> list:
     if not isinstance(list_data, list): raise TypeError("Not list")
     if not_int_list(list_data): raise ValueError("List contains non integer value")
     if len(list_data) == 0 : return mode
-
+    freq = {}
+    mx = 0
+    for num in list_data:
+        if num not in freq:
+            freq[num] = 0
+        freq[num] += 1
+        mx = max(mx, freq[num])
+    for num, value in freq.items():
+        if value==mx:
+            mode.append(num)
+    mode.sort()
+    return mode
 
 def range(list_data: list) -> float:
     ''' Returns range of list
