@@ -28,28 +28,29 @@ def mode(list_data: list) -> list:
     :param list_data: list of values
     :return: list, list of most frequent values
     '''
-    # list to return
-    mode = []
-    # map of frequency of each value
+    # List of values to return
+    ret_mode = []
+    # Handle exception if list_data is not a list
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Handle exception if list_data contains non int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
+    # Occurences of each value in list_data
     freq = {}
-    # max occurrences of a value
+    # Maximum occurence of a value
     mx = 0
-    # empty list handling
-    if len(list_data) == 0 : return mode
     for num in list_data:
-        # hash num if not put in freq map
+        # Hash num if not accounted for yet
         if num not in freq:
             freq[num] = 0
-        # increase value frequency
+        # Increase occurence by 1
         freq[num] += 1
-        # update max occurrences
         mx = max(mx, freq[num])
-    # add values to return list if they have same occurrence as max occurrences
+    # Iterate through keys, add all numbers with same frequency as maximum
     for num, value in freq.items():
         if value == mx:
-            mode.append(num)
-    mode.sort()
-    return mode
+            ret_mode.append(num)
+    ret_mode.sort()
+    return ret_mode
 
 def range(list_data: list) -> float:
     ''' Returns range of list
@@ -68,7 +69,9 @@ def lower_quartile(list_data: list) -> int:
     :param list_data: list of values
     :return: int, lower quartile of list
     '''
-    # Handling list that is less than 4 values, no lower quartile, returns -1
+    # Handle non list input
+    if not isinstance(list_data, list) : raise TypeError("Not list")
+    # Handle list that is less than 4 values, no lower quartile, returns -1
     if len(list_data) < 4 : return -1
     list_data.sort()
     # Create list consisting of lower half of list_data
@@ -87,7 +90,9 @@ def upper_quartile(list_data: list) -> int:
     :param list_data: list of values
     :return: int, upper quartile of list
     '''
-    # Handling list that is less than 4 values, no upper quartile, returns -1
+    # Handle non list input
+    if not isinstance(list_data, list) : raise TypeError("Not list")
+    # Handle list that is less than 4 values, no upper quartile, returns -1
     if len(list_data) < 4 : return -1
     list_data.sort()
     # Create list consisting of upper half of list_data
@@ -105,7 +110,12 @@ def variance(list_data: list) -> float:
     :param list_data: list of values
     :return: float, variance of the list rounded to 3 decimals
     '''
-    if len(list_data) == 0 : return 0
+    # Handle non list input
+    if not isinstance(list_data, list) : raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0 : return -1
+    # List contains value that is not int
+    if not_int_list(list_data) : raise ValueError("List contains non integer value")
     # Find mean of list
     mean = sum(list_data) / len(list_data)
     total = 0
