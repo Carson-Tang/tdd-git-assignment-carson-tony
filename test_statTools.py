@@ -33,21 +33,26 @@ number = 10
 
 ##### Mean #####
 def test_mean_1():
-    assert(mean(empty_data) == -1)
-
-def test_mean_2():
     assert(mean(list_data) == 6)
 
-def test_mean_3():
+def test_mean_2():
     assert(mean(list_data2) == 7)
 
+def test_mean_3():
+    assert(mean(empty_data) == -1)
+
+def test_mean_4():
+    assert(mean(list_of_zero) == 0)
+
+def test_mean_5():
+    assert(mean(neg_num_data) == -5.33)
+
 def test_mean_valueError():
-    with pytest.raises(ValueError) as error : variance(float_data)
+    with pytest.raises(ValueError) as error : mean(float_data)
     assert("List contains non integer value" == str(error.value))
 
-# String in list, ans = TypeError
 def test_mean_typeError():
-    with pytest.raises(TypeError) as error : variance(number)
+    with pytest.raises(TypeError) as error : mean(number)
     assert("Not list" == str(error.value))
 
 ##### Median #####
@@ -60,14 +65,19 @@ def test_median_2():
 def test_median_3():
     assert(median(list_data) == 5)
 
+def test_median_4():
+    assert(median(list_of_zero) == 0)
+
+def test_median_5():
+    assert(median(neg_num_data) == -5)
 # Float in list, ans = ValueError
 def test_Median_valueError():
-    with pytest.raises(ValueError) as error : variance(float_data)
+    with pytest.raises(ValueError) as error : median(float_data)
     assert("List contains non integer value" == str(error.value))
 
 # String in list, ans = TypeError
 def test_Median_typeError():
-    with pytest.raises(TypeError) as error : variance(number)
+    with pytest.raises(TypeError) as error : median(number)
     assert("Not list" == str(error.value))
 
 ##### Mode #####
@@ -214,5 +224,3 @@ def test_standar_deviation_valueError():
 def test_standard_deviation_typeError():
     with pytest.raises(TypeError) as error: variance(number)
     assert ("Not list" == str(error.value))
-
-
