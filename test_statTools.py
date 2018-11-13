@@ -41,6 +41,15 @@ def test_mean_2():
 def test_mean_3():
     assert(mean(list_data2) == 7)
 
+def test_mean_valueError():
+    with pytest.raises(ValueError) as error : variance(float_data)
+    assert("List contains non integer value" == str(error.value))
+
+# String in list, ans = TypeError
+def test_mean_typeError():
+    with pytest.raises(TypeError) as error : variance(number)
+    assert("Not list" == str(error.value))
+
 ##### Median #####
 def test_median_1():
     assert(median(empty_data) == -1)
@@ -50,6 +59,16 @@ def test_median_2():
 
 def test_median_3():
     assert(median(list_data) == 5)
+
+# Float in list, ans = ValueError
+def test_Median_valueError():
+    with pytest.raises(ValueError) as error : variance(float_data)
+    assert("List contains non integer value" == str(error.value))
+
+# String in list, ans = TypeError
+def test_Median_typeError():
+    with pytest.raises(TypeError) as error : variance(number)
+    assert("Not list" == str(error.value))
 
 ##### Mode #####
 
@@ -93,6 +112,16 @@ def test_range_2():
 
 def test_range_3():
     assert(range(list_data2) == 19)
+
+# Float in list, ans = ValueError
+def test_Range_valueError():
+    with pytest.raises(ValueError) as error : variance(float_data)
+    assert("List contains non integer value" == str(error.value))
+
+# String in list, ans = TypeError
+def test_Range_typeError():
+    with pytest.raises(TypeError) as error : variance(number)
+    assert("Not list" == str(error.value))
 
 ##### Lower Quartile #####
 # Sorted list = [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20]
@@ -175,5 +204,15 @@ def test_standard_deviation_2():
 
 def test_standard_deviation_3():
     assert(standard_Deviation(list_data2) == round(math.sqrt(104/3),3))
+
+# Float in list, ans = ValueError
+def test_standar_deviation_valueError():
+    with pytest.raises(ValueError) as error: variance(float_data)
+    assert ("List contains non integer value" == str(error.value))
+
+# String in list, ans = TypeError
+def test_standard_deviation_typeError():
+    with pytest.raises(TypeError) as error: variance(number)
+    assert ("Not list" == str(error.value))
 
 

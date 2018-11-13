@@ -28,7 +28,12 @@ def mean(list_data: list) -> float:
     :return: float, mean of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     return sum(list_data) / len(list_data)
 
 def median(list_data: list) -> float:
@@ -37,7 +42,12 @@ def median(list_data: list) -> float:
     :return: float, median of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     list_data.sort()
     divider = len(list_data) // 2
     if len(list_data) % 2 == 0:
@@ -76,7 +86,12 @@ def range(list_data: list) -> float:
     :return: float, range of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     list_data.sort()
     return list_data[len(list_data) - 1] - list_data[0]
 
@@ -158,7 +173,12 @@ def standard_Deviation(list_data: list) -> float:
     :return: float, standard deviation of the list rounded to 3 decimals
     Author: Ni.T
     '''
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
     if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     mean = sum(list_data) / len(list_data)
     total = 0
     for num in list_data:
