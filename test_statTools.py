@@ -70,12 +70,11 @@ def test_median_4():
 
 def test_median_5():
     assert(median(neg_num_data) == -5)
-# Float in list, ans = ValueError
+
 def test_Median_valueError():
     with pytest.raises(ValueError) as error : median(float_data)
     assert("List contains non integer value" == str(error.value))
 
-# String in list, ans = TypeError
 def test_Median_typeError():
     with pytest.raises(TypeError) as error : median(number)
     assert("Not list" == str(error.value))
@@ -123,14 +122,18 @@ def test_range_2():
 def test_range_3():
     assert(range(list_data2) == 19)
 
-# Float in list, ans = ValueError
+def test_range_4():
+    assert(range(list_of_zero) == 0)
+
+def test_range_5():
+    assert(range(neg_num_data) == 9)
+
 def test_Range_valueError():
-    with pytest.raises(ValueError) as error : variance(float_data)
+    with pytest.raises(ValueError) as error : range(float_data)
     assert("List contains non integer value" == str(error.value))
 
-# String in list, ans = TypeError
 def test_Range_typeError():
-    with pytest.raises(TypeError) as error : variance(number)
+    with pytest.raises(TypeError) as error : range(number)
     assert("Not list" == str(error.value))
 
 ##### Lower Quartile #####
@@ -215,12 +218,13 @@ def test_standard_deviation_2():
 def test_standard_deviation_3():
     assert(standard_Deviation(list_data2) == round(math.sqrt(104/3),3))
 
-# Float in list, ans = ValueError
+def test_standar_deviation_3():
+    assert(standard_Deviation(list_of_zero) == 0)
+
 def test_standar_deviation_valueError():
-    with pytest.raises(ValueError) as error: variance(float_data)
+    with pytest.raises(ValueError) as error: standard_Deviation(float_data)
     assert ("List contains non integer value" == str(error.value))
 
-# String in list, ans = TypeError
 def test_standard_deviation_typeError():
-    with pytest.raises(TypeError) as error: variance(number)
+    with pytest.raises(TypeError) as error: standard_Deviation(number)
     assert ("Not list" == str(error.value))
