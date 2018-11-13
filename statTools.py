@@ -34,7 +34,7 @@ def mean(list_data: list) -> float:
     if len(list_data) == 0: return -1
     # List contains value that is not int
     if not_int_list(list_data): raise ValueError("List contains non integer value")
-    return sum(list_data) / len(list_data)
+    return round(sum(list_data) / len(list_data),2)
 
 def median(list_data: list) -> float:
     ''' Returns median of list
