@@ -11,7 +11,6 @@ Created: 2018/11/11
 import math
 def not_int_list(list_data: list) -> bool:
     ''' Determine if list contains non integer value
-
     :param list_data: list of values
     :return: bool, True if list contains non int, otherwise False
     Author: Tang.C
@@ -25,22 +24,30 @@ def not_int_list(list_data: list) -> bool:
 
 def mean(list_data: list) -> float:
     ''' Returns mean of list
-
     :param list_data: list of values
     :return: float, mean of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
-    return sum(list_data) / len(list_data)
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
+    return round(sum(list_data) / len(list_data),2)
 
 def median(list_data: list) -> float:
     ''' Returns median of list
-
     :param list_data: list of values
     :return: float, median of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     list_data.sort()
     divider = len(list_data) // 2
     if len(list_data) % 2 == 0:
@@ -49,38 +56,48 @@ def median(list_data: list) -> float:
         return list_data[divider]
 
 def mode(list_data: list) -> list:
-    mode = []
+    # List of values to return
+    ret_mode = []
+    # Handle exception if list_data is not a list
     if not isinstance(list_data, list): raise TypeError("Not list")
+    # Handle exception if list_data contains non int
     if not_int_list(list_data): raise ValueError("List contains non integer value")
-    if len(list_data) == 0 : return mode
+    # Occurences of each value in list_data
     freq = {}
+    # Maximum occurence of a value
     mx = 0
     for num in list_data:
+        # Hash num if not accounted for yet
         if num not in freq:
             freq[num] = 0
+        # Increase occurence by 1
         freq[num] += 1
         mx = max(mx, freq[num])
+    # Iterate through keys, add all numbers with same frequency as maximum
     for num, value in freq.items():
-        if value==mx:
-            mode.append(num)
-    mode.sort()
-    return mode
+        if value == mx:
+            ret_mode.append(num)
+    ret_mode.sort()
+    return ret_mode
 
 def range(list_data: list) -> float:
     ''' Returns range of list
-
     :param list_data: list of values
     :return: float, range of the list
     Author: Ni.T
     '''
-    if len(list_data) == 0 : return -1
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
+    if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     list_data.sort()
     return list_data[len(list_data) - 1] - list_data[0]
 
 def lower_quartile(list_data: list) -> int:
     ''' Returns lower quartile of a list
         Lower quartile : median of lower half of list
-
     :param list_data: list of values
     :return: int, lower quartile of list
     Author: Tang.C
@@ -105,7 +122,6 @@ def lower_quartile(list_data: list) -> int:
 def upper_quartile(list_data: list) -> int:
     ''' Return upper quartile of a list
         Upper quartile : median of upper half of list
-
     :param list_data: list of values
     :return: int, upper quartile of list
     Author: Tang.C
@@ -130,7 +146,6 @@ def upper_quartile(list_data: list) -> int:
 def variance(list_data: list) -> float:
     ''' Return variance of a list
         Variance : Spread of numbers from the average value in the list
-
     :param list_data: list of values
     :return: float, variance of the list rounded to 3 decimals
     Author: Tang.C
@@ -158,7 +173,12 @@ def standard_Deviation(list_data: list) -> float:
     :return: float, standard deviation of the list rounded to 3 decimals
     Author: Ni.T
     '''
+    # Handle non list input
+    if not isinstance(list_data, list): raise TypeError("Not list")
+    # Empty list exception
     if len(list_data) == 0: return -1
+    # List contains value that is not int
+    if not_int_list(list_data): raise ValueError("List contains non integer value")
     mean = sum(list_data) / len(list_data)
     total = 0
     for num in list_data:
