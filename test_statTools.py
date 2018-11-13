@@ -32,49 +32,63 @@ neg_num_data = [-1, -5, -10]
 number = 10
 
 ##### Mean #####
+# [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20] , ans = 6
 def test_mean_1():
     assert(mean(list_data) == 6)
 
+# [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 18, 20] , ans = 7
 def test_mean_2():
     assert(mean(list_data2) == 7)
 
+# [] , ans = -1
 def test_mean_3():
     assert(mean(empty_data) == -1)
 
+# [0, 0, 0] , ans = 0
 def test_mean_4():
     assert(mean(list_of_zero) == 0)
 
+# [-1, -5, -10] , ans = -5.33
 def test_mean_5():
     assert(mean(neg_num_data) == -5.33)
 
+# Float in list, ans = ValueError
 def test_mean_valueError():
     with pytest.raises(ValueError) as error : mean(float_data)
     assert("List contains non integer value" == str(error.value))
 
+# Number passed in function instead of list
 def test_mean_typeError():
     with pytest.raises(TypeError) as error : mean(number)
     assert("Not list" == str(error.value))
 
 ##### Median #####
+# [] , ans = -1
 def test_median_1():
     assert(median(empty_data) == -1)
 
+#[1, 2, 3], ans = 2
 def test_median_2():
     assert(median(list_data3) == 2)
 
+# [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20] , ans = 5
 def test_median_3():
     assert(median(list_data) == 5)
 
+# [0, 0, 0] , ans = 0
 def test_median_4():
     assert(median(list_of_zero) == 0)
 
+# [-1, -5, -10] , ans = -5
 def test_median_5():
     assert(median(neg_num_data) == -5)
 
+# Float in list, ans = ValueError
 def test_Median_valueError():
     with pytest.raises(ValueError) as error : median(float_data)
     assert("List contains non integer value" == str(error.value))
 
+# Number passed in function instead of list
 def test_Median_typeError():
     with pytest.raises(TypeError) as error : median(number)
     assert("Not list" == str(error.value))
@@ -113,25 +127,32 @@ def test_mode_typeError():
 
 
 ##### Range #####
+# [], ans = -1
 def test_range_1():
     assert(range(empty_data) == -1)
 
+# [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20] , ans = 20
 def test_range_2():
     assert(range(list_data) == 20)
 
+# [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 18, 20] , ans = 19
 def test_range_3():
     assert(range(list_data2) == 19)
 
+# [0, 0, 0] , ans = 0
 def test_range_4():
     assert(range(list_of_zero) == 0)
 
+# [-1, -5, -10] , ans = 9
 def test_range_5():
     assert(range(neg_num_data) == 9)
 
+# Float in list, ans = ValueError
 def test_Range_valueError():
     with pytest.raises(ValueError) as error : range(float_data)
     assert("List contains non integer value" == str(error.value))
 
+# Number passed in function instead of list
 def test_Range_typeError():
     with pytest.raises(TypeError) as error : range(number)
     assert("Not list" == str(error.value))
@@ -209,22 +230,28 @@ def test_variance_typeError():
     assert("Not list" == str(error.value))
 
 ##### Standard Deviation #####
+# [], ans = -1
 def test_standard_deviation_1():
     assert(standard_Deviation(empty_data) == -1)
 
+# [0, 1, 2, 4, 4, 5, 6, 7, 8, 9, 20] , ans = 5.187
 def test_standard_deviation_2():
     assert(standard_Deviation(list_data) == round(math.sqrt(296/11),3))
 
+# [1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 18, 20] , ans = 5.88
 def test_standard_deviation_3():
     assert(standard_Deviation(list_data2) == round(math.sqrt(104/3),3))
 
+# [], ans = 0
 def test_standar_deviation_3():
     assert(standard_Deviation(list_of_zero) == 0)
 
+# Float in list, ans = ValueError
 def test_standar_deviation_valueError():
     with pytest.raises(ValueError) as error: standard_Deviation(float_data)
     assert ("List contains non integer value" == str(error.value))
 
+# Number passed to function instead of list
 def test_standard_deviation_typeError():
     with pytest.raises(TypeError) as error: standard_Deviation(number)
     assert ("Not list" == str(error.value))
